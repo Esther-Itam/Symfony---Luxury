@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
  * @Route("/job/offer")
  */
@@ -56,6 +57,7 @@ class JobOfferController extends AbstractController
      */
     public function show(JobOffer $jobOffer): Response
     {
+        
         return $this->render('job_offer/show.html.twig', [
             'job_offer' => $jobOffer,
         ]);

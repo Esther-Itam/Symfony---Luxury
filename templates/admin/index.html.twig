@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<!-- Page Header-->
+        <section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="white-text">Dashboard</h2>
+                        <span class="white-text"></span>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+<section>
+
+        <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="{{path("client_index")}}">List of clients</a>
+        <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="{{path("client_new")}}">Create client</a>
+        <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="{{path("user_index")}}">List of candidates</a>
+        <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="{{path("user_new")}}">Create candidates</a>
+
+ </section>
+{% endblock %}

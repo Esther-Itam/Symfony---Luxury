@@ -3,6 +3,105 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+<header id="header" class="tt-nav transparent-header ">
+    <div class="header-sticky semi-transparent">
+        <div class="container">
+
+            <div id="materialize-menu" class="menuzord">
+
+                <a class="brand logo-brand" href="/"></a>
+                <div id="mobile-menu">
+                    <div class="nav-wrapper" id="toggle">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </div>
+                    <div class="icon-wrapper">
+                        <span class="account">
+							<a href="/templates/auth/profile.html">
+                                <i class="material-icons">&#xE7FD;</i>
+                            </a>
+						</span>
+                    </div>
+                    <div class="nav-overlay" id="overlay">
+                        <nav class="overlay-menu">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/templates/jobs/index.html">Jobs Offers</a></li>
+                                <li><a href="/templates/compagny.html">About Us</a></li>
+                                <li><a href="/templates/contact.html">Contact</a></li>
+                                <li>-</li>
+                                <li><a href="/templates/auth/profile.html">Profile</a></li>
+                                <li><a href="/logout.html">Logout</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="menuzord-menu pull-right light" role="navigation">
+                        <li class=" dropdown">
+                            <a target="_self" href="/templates/auth/login.html">
+                                <span>Login</span>
+                            </a>
+                        </li>
+                        <li class=" dropdown">
+                            <a target="_self" href="/templates/auth/register.html" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
+                                <span>Sign Up</span>
+                            </a>
+
+                        </li>
+                    </ul>
+                    <ul class="menuzord-menu pull-right light" role="navigation">
+                        <li class="active dropdown">
+                            <a target="_self" href="/">
+                                <i class=""></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class=" dropdown">
+                            <a target="_self" href="/templates/jobs/index.html">
+                                <i class=""></i>
+                                <span>Jobs offers</span>
+                            </a>
+                        </li>
+                        <li class=" dropdown">
+                            <a target="_self" href="/templates/compagny.html">
+                                <i class=""></i>
+                                <span>About us</span>
+                            </a>
+                        </li>
+                        <li class=" dropdown">
+                            <a target="_self" href="/templates/contact.html">
+                                <i class=""></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="base">
+
+    <!-- Page -->
+    <div class="page">
+
+        <!-- Page Header-->
+        <section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="white-text">Login</h2>
+                        <span class="white-text">Welcome on board</span>
+                        <ol class="breadcrumb">
+                            <li><a href="#!">Home</a></li>
+                            <li class="active">Login</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -14,7 +113,6 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
     <label for="inputPassword">Password</label>
@@ -27,7 +125,6 @@
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
-
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" name="_remember_me"> Remember me

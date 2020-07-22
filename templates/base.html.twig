@@ -30,7 +30,13 @@
     <link href="http://kys.idmkr.io/cache/assets/frontend.kys.revolution-layers.4f1e49eeb6f7351bbdc1fb6e35adb6ed_1547807826.css" rel="stylesheet">
     <link href="http://kys.idmkr.io/cache/assets/frontend.kys.revolution-navigation.2f4deeb1fe1d3f7c9ab31d29a1133835_1547807825.css" rel="stylesheet">
 
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+<style>
+        select {
+            display: block!important;
+        }
+    </style>
+{% endblock %}
 
          <script>
         window.isMobile = (function() {

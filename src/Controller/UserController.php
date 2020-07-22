@@ -68,16 +68,32 @@ class UserController extends AbstractController
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('user_index');
         }
+        $pourcentage = 0;
+            if($user->getEmail()){
+                $pourcentage += (100/5);
+            }
+            if($user->getPassword()){
+                $pourcentage += (100/5);
+            }
+            if($user->getGender()){
+                $pourcentage += (100/5);
+            }
+            if($user->getFirstName()){
+                $pourcentage += (100/5);
+            }
+            if($user->getLastName()){
+                $pourcentage += (100/5);
+            }
 
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'pourcentage' => round($pourcentage),
         ]);
     }
 

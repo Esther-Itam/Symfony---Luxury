@@ -36,9 +36,13 @@ class UserType extends AbstractType
             ->add('address')
             ->add('country')
             ->add('nationality')
-            ->add('birthDate')
+            ->add('birthDate', DateType::class, [
+                'widget' => 'single_text',
+                'input'  => 'datetime_immutable',
+                'required'   => false,
+            ])
             ->add('birthPlace')
-            ->add('passport', CheckboxType::class,  array('required' => false))
+            /* ->add('passport', CheckboxType::class,  array('required' => false)) */
             ->add('passport_file', FileType::class, [
                 'label' => 'Passport (pdf file)',
                 // unmapped means that this field is not associated to any entity property

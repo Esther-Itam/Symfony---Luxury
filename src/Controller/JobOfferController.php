@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Candidature;
 
 
 /**
@@ -57,9 +58,13 @@ class JobOfferController extends AbstractController
      */
     public function show(JobOffer $jobOffer): Response
     {
-        
+        $candidature = $this->getDoctrine()
+        ->getRepository(Candidature::class)
+        ->findAll();
+
         return $this->render('job_offer/show.html.twig', [
             'job_offer' => $jobOffer,
+            'candidature' => $candidature,
         ]);
     }
 
